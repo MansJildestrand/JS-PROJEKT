@@ -1,0 +1,121 @@
+/* Allmänna stilar för kroppen */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #193b5b72;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Stilar för spelbehållaren */
+.game-container {
+    background: rgba(32, 61, 65, 0.485);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Stilar för spelare-sektionen */
+.players-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Stilar för varje spelarsektion */
+.player {
+    flex: 1;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Stilar för den aktiva spelaren */
+.player.active {
+    background-color: #d3f8e2;
+    transform: scale(1.05);
+}
+
+/* Stilar för kontrollsektionen */
+.controls {
+    margin-top: 20px;
+}
+
+/* Stilar för knappar */
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover-effekt för knappar */
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Stilar för inaktiverade knappar */
+button:disabled {
+    background-color: #cccccc;
+}
+
+/* Stilar för tärningsresultat */
+#dice-result {
+    font-size: 1.5em;
+    margin-top: 20px;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Animation för tärningsresultat */
+#dice-result.animate {
+    opacity: 0;
+    transform: rotate(360deg);
+}
+
+/* Stilar för vinnarmeddelandet */
+#winner-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: green;
+    transition: opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Visa vinnarmeddelandet */
+#winner-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media query för mindre skärmar */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 15px;
+    }
+    .players-container {
+        flex-direction: column;
+    }
+    .player {
+        margin: 10px 0;
+    }
+    button {
+        padding: 10px;
+        max-width: 100%;
+    }
+}
